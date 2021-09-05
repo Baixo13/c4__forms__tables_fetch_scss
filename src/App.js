@@ -4,7 +4,7 @@ import Test from "./pages/Test/Test"
 
 const App = () => {
   return (
-    <Test/>
+    <Test />
   )
 }
 
