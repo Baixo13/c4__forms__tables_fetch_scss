@@ -1,0 +1,11 @@
+@import "../../Styles/base/settings.scss";
+
+table{
+    padding: 30px;
+}
+
+th{
+    border: 1px solid $primary;
+    margin: 0;
+    padding: 5px;
+}

@@ -1,0 +1,12 @@
+@import "../../Styles/base/settings.scss";
+
+.footer{
+    background-color: $primary;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    & > small {
+        color: $myWhite;
+        padding: 8px;
+    }
+}
