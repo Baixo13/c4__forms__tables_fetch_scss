@@ -16,7 +16,7 @@ const Test = () => {
   const deleteTask = async (id) => {
     const config = {method: "DELETE"}
     const response = await fetch(`${API}/task/${id}`, config)
-    const data = await response.json()
+    /* const data =  */await response.json()
     getTasks()
   }
 
@@ -31,7 +31,7 @@ const Test = () => {
       })
     }
     const response = await fetch(`${API}/task`, config)
-    const data = await response.json()
+    /* const data =  */await response.json()
     getTasks()
   }
 
@@ -46,7 +46,7 @@ const Test = () => {
       })
     }
     const response = await fetch(`${API}/task/${id}`, config)
-    const data = await response.json()
+    /* const data =  */await response.json()
     getTasks()
   }
 

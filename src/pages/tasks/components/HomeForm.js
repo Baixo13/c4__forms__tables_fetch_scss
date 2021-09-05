@@ -1,21 +1,21 @@
-import { useEffect, useState } from "react";
+/* import { useEffect, useState } from "react";
 import Form from "../../../Components/Form/Form";
 import FormInput from "../../../Components/Form/FormInput";
 import Button from "../../../Components/Button/Button";
-const API = "https://api-tasks.vercel.app/api"
+const API = "https://api-tasks.vercel.app/api" */
 
-const HomeForm = (props) => {
+/* const HomeForm = (props) => { */
 
-    const { tasks, taskId, setTaskId, getTasks } = props;
+    /* const { tasks, taskId, setTaskId, getTasks } = props; */
     
     /* Tarea actual */
-    const [form, setForm] = useState({
+    /* const [form, setForm] = useState({
         responsable: "",
         description: "",
-    });
+    }); */
 
     /* Crear una nueva tarea */
-    const createTask = async () => {
+    /* const createTask = async () => {
         const { responsable, description } = form
 
         const config = {
@@ -29,10 +29,10 @@ const HomeForm = (props) => {
         const response = await fetch(`${API}/task`, config)
         const data = await response.json()
         alert ("Success")
-    }
+    } */
 
     /*  */
-    const patchTask = async (id) => {
+    /* const patchTask = async (id) => {
         const {responsable, description} = form
         const config = {
           method: "PATCH",
@@ -45,10 +45,10 @@ const HomeForm = (props) => {
         const response = await fetch(`${API}/task/${id}`, config)
         const data = await response.json()
         getTasks()
-      }
+      } */
 
     /* Maneja el cambio de valor de input */
-    const handleChange = e => {
+    /* const handleChange = e => {
         const { name, value } = e.target;
         setForm({
             ...form,
@@ -81,6 +81,6 @@ const HomeForm = (props) => {
             />
         </Form>
     )
-}
+} */
 
-export default HomeForm;
+/* export default HomeForm; */

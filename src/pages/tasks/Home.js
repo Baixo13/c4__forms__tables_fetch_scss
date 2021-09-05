@@ -1,4 +1,4 @@
-import './style.scss'
+/* import './style.scss'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
 import HomeForm from './components/HomeForm'
@@ -27,4 +27,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home */
