@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import FormInput from "../../Components/Form/FormInput";
 import Form from "../../Components/Form/Form";
 import Button from "../../Components/Button/Button";
+import Table from "../../Components/Table/Table"
+import './style.scss';
+
 const API = process.env.REACT_APP_SERVER
 
 const Test = () => {
@@ -14,14 +17,14 @@ const Test = () => {
   }
 
   const deleteTask = async (id) => {
-    const config = {method: "DELETE"}
+    const config = { method: "DELETE" }
     const response = await fetch(`${API}/task/${id}`, config)
     /* const data =  */await response.json()
     getTasks()
   }
 
   const createTask = async () => {
-    const {responsable, description} = form
+    const { responsable, description } = form
     const config = {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -36,7 +39,7 @@ const Test = () => {
   }
 
   const patchTask = async (id) => {
-    const {responsable, description} = form
+    const { responsable, description } = form
     const config = {
       method: "PATCH",
       headers: { "content-type": "application/json" },
@@ -54,25 +57,25 @@ const Test = () => {
     getTasks()
   }, [])
 
-/* Tarea actual */
-const [form, setForm] = useState({
-  responsable: "",
-  description: "",
-});
+  /* Tarea actual */
+  const [form, setForm] = useState({
+    responsable: "",
+    description: "",
+  });
 
-/* Maneja el cambio de valor de input */
-const handleChange = e => {
-  const { name, value } = e.target;
-  setForm({
+  /* Maneja el cambio de valor de input */
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setForm({
       ...form,
       [name]: value,
-  })
-  console.log(e.target.value)
-}
+    })
+    console.log(e.target.value)
+  }
 
   return (
-    <>
-      <Form>
+    <main className="main">
+      <Form className="main__form">
         <FormInput
           label="Responsable"
           id="inResponsable"
@@ -94,28 +97,13 @@ const handleChange = e => {
           onClick={createTask}
         />
       </Form>
-      <div>
-        {
-          tasks.length === 0 ? (
-            <div>No hay tareas</div>
-          ) : (
-            tasks.map(task => {
-              return (
-                <tr key={task.id}>
-                  <td>
-                    <button onClick={() => deleteTask(task.id)}>x</button>
-                    <button onClick={() => patchTask(task.id)}>patch</button>
-                  </td>
-                  <td>{task.id}</td>
-                  <td>, {task.responsable}</td>
-                  <td>, {task.description}</td>
-                </tr>
-              )
-            })
-          )
-        }
-      </div>
-    </>
+      <Table
+        className = "main__table"
+        tasks={tasks}
+        deleteTask={deleteTask}
+        patchTask={patchTask}
+      />
+    </main>
   )
 }
 
